@@ -29,5 +29,9 @@ namespace Assignment
 
             return new ProductObject();
         }
+        public string GetTitle()
+        {
+            return GlobalVariables.Driver.Url;
+        }
     }
 }

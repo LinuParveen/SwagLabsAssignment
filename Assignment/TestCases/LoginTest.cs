@@ -26,6 +26,7 @@ namespace Assignment
         {
             var login = new LoginObject();
             var productPage = login.LauncApplication(ExcelUtility.ReadData(1, "UserName"), ExcelUtility.ReadData(1, "Password"));
+            Assert.AreEqual("https://www.saucedemo.com/inventory.html", login.GetTitle(), "Not logged into the Application");
             productPage.ClickOnRandomProducts();
             // The assert is based on the pre-condition that the shopping cart is empty for the logged in user
             Assert.AreEqual("3", productPage.GetShoppingCartItems(), "3 items not selected");
